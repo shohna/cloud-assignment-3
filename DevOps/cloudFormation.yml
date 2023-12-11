@@ -25,7 +25,7 @@ Resources:
       NotificationConfiguration:
         LambdaConfigurations:
           - Event: 's3:ObjectCreated:Put'
-            Function: !GetAtt index-photos-function.Arn
+            Function: !GetAtt IndexPhotosFunction.Arn
 
   AssetsBucket:
     Type: AWS::S3::Bucket
@@ -376,16 +376,16 @@ Resources:
                   - rekognition:DetectLabels
                 Resource: '*'  
 
-  index-photos-functionPermission:
+  IndexPhotosFunctionPermission:
     Type: "AWS::Lambda::Permission"
     Properties:
       Action: "lambda:InvokeFunction"
-      FunctionName: !GetAtt index-photos-function.Arn
+      FunctionName: !GetAtt IndexPhotosFunction.Arn
       Principal: "s3.amazonaws.com"
       SourceArn: !GetAtt PhotosBucket.Arn
 
 
-  index-photos-function:
+  IndexPhotosFunction:
     Type: AWS::Lambda::Function
     Properties:
       FunctionName: index-photos
