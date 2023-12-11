@@ -1,5 +1,6 @@
 # cloud-assignment-3
 
-Team members: 
-Devyani Bairagya db4922
-Shohna Kanchan sk11239
+Team Members:
+---------------------
+Shohna Kanchan - sk11239 <br>
+Devyani Bairagya - db4922
